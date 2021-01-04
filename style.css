@@ -1,0 +1,37 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: PopLight;
+  src: url("./fonts/Poppins-Light.ttf");
+}
+@font-face {
+  font-family: PopRegular;
+  src: url("./fonts/Poppins-Regular.ttf");
+}
+
+body {
+  font-family: PopLight;
+}
+
+.portofolio {
+  color: white;
+  background: radial-gradient(
+    rgba(43, 55, 96, 1),
+    rgba(11, 16, 35, 1) /* the 1 represents full opacity */
+  );
+}
+
+nav {
+  min-height: 10vh;
+  width: 90%;
+  margin: auto; /* adds 5% space on the left and right push Steven and burger towards middle */
+  display: flex;
+  justify-content: space-between; /* shoves the burger to the far right */
+  align-items: center;
+}
