@@ -30,8 +30,94 @@ body {
 nav {
   min-height: 10vh;
   width: 90%;
-  margin: auto; /* adds 5% space on the left and right push Steven and burger towards middle */
+  margin: auto; /* adds 5% space on the left and right, pushing Steven and burger towards middle */
   display: flex;
   justify-content: space-between; /* shoves the burger to the far right */
   align-items: center;
+  padding: 20px 0;
+}
+
+.logo {
+  font-size: 20px;
+}
+
+.page {
+  min-height: 90vh;
+  display: grid;
+  grid-template-columns: 5% 1fr 1fr 1fr 5%; /*creates the 5% margin on both sides and creates three equal columns between the margins */
+}
+
+.hero {
+  overflow: hidden; /*Makes it so the image on the right doesn't hang over*/
+  heeeeeeight: 500px;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+}
+
+.hero img {
+  height: 500px;
+  transition: transform 0.3s ease-out;
+  cursor: pointer;
+}
+
+.model-right {
+  /*the 0% is the x-axis and the 10% is the y, moving the image down */
+  transform: translate(0%, 10%);
+}
+
+.model-left {
+  transform: translate(0%, -10%);
+}
+
+.hero:hover .model-right {
+  transform: translate(0%, 0%);
+}
+
+.hero:hover .model-left {
+  transform: translate(0%, 0%);
+}
+
+.details {
+  grid-column: 2/3; /* pushes the seymour text to the 1st column and the image goes to the next and it centered */
+  align-self: end;
+}
+
+.details h1 {
+  font-size: 64px;
+  font-family: PopRegular;
+}
+
+.details h2 {
+  font-size: 42px;
+  padding: 20px 0px; /*Adds space on the top/bottom of the (maester, guardian, summoner) */
+}
+
+.details p {
+  font-size: 24px;
+  padding: 20px 0px 50px 0px;
+}
+
+.pages {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.pages > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pages h3 {
+  font-size: 24px;
+  padding: 30px;
+}
+
+.pages svg {
+  cursor: pointer;
+  opacity: 0.5;
+  transform: scale(2);
 }
