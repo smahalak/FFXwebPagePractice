@@ -49,7 +49,7 @@ nav {
 
 .hero {
   overflow: hidden; /*Makes it so the image on the right doesn't hang over*/
-  heeeeeeight: 500px;
+  height: 500px;
   align-self: center;
   justify-self: center;
   display: flex;
@@ -118,6 +118,158 @@ nav {
 
 .pages svg {
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 0.5; /*makes the circles the gray color*/
   transform: scale(2);
+}
+
+.pages svg:hover {
+  animation: dot 0.5s ease-in-out infinite alternate; /*makes the circles move infinitly*/
+}
+
+.pages svg.active {
+  opacity: 1;
+}
+
+@keyframes dot {
+  /*makes the circles double in size and return to normal*/
+  0% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(4);
+  }
+}
+
+/*The below content will be for the photo.html  */
+
+.banner {
+  height: 50vh;
+  width: 100%;
+  position: relative; /*This is so we can place the Seymour text on top of the image  */
+}
+
+.banner img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /*This makes it so the image is "less," stretched  */
+  object-position: 0 11%; /*This repositions the image  */
+}
+
+.author {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  text-shadow: 2px 2px 2px rgb(241, 226, 137, 1);
+  color: rgb(15, 42, 73);
+  text-align: center;
+}
+
+.author h1 {
+  font-size: 42px;
+}
+
+.author h3 {
+  padding: 10px 0px;
+  font-size: 32px;
+}
+
+.story,
+.my-work {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  padding: 80px 0px; /* Creates the space betwen his story/work */
+}
+
+.story-description,
+.work-description {
+  width: 50%; /*Makes it so the text doesn't drag across the screen */
+}
+
+.story-description h3,
+.work-description h3 {
+  font-size: 36px;
+  padding: bottom 30px;
+}
+
+.story-description p,
+.work-description p {
+  padding: 20px 0px;
+  font-size: 20px;
+}
+
+.work-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+}
+
+.work-gallery img {
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  /*body {
+    display: none;
+  }  this is just an easy way to test to see if it's working*/
+
+  .page {
+    grid-template-columns: 5% 1fr 5%;
+    grid-template-rows: 2fr 1fr;
+    align-items: center;
+  }
+  .hero {
+    grid-column: 2/3;
+    height: auto;
+  }
+  .hero img {
+    height: 500px;
+  }
+  .details {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    text-align: center;
+  }
+
+  .details h1 {
+    font-size: 48px;
+  }
+  .details h2 {
+    font-size: 38px;
+  }
+
+  /*The below impacts the photo html */
+  .story,
+  .my-work {
+    flex-direction: column; /* Makes it so the images stack under the paragraphs when the screen gets smaller */
+  }
+  .story-description,
+  .work-description {
+    width: 100%;
+  }
+
+  .work-gallery {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax (200px, 1fr)
+    ); /* always makes images 200px but when there is more space, it can take up whatever space is left */
+  }
+  .profile {
+    padding-top: 30px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero img {
+    height: 300px;
+  }
+  .details h1 {
+    font-size: 38px;
+  }
+  .details h2 {
+    font-size: 28px;
+  }
 }
