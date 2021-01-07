@@ -47,6 +47,20 @@ nav {
   grid-template-columns: 5% 1fr 1fr 1fr 5%; /*creates the 5% margin on both sides and creates three equal columns between the margins */
 }
 
+.tidus,
+.yuna {
+  bottom: 0%; /* This makes it into 1 page, stacking the images on seymour  */
+  left: 0%;
+  width: 100%;
+  opacity: 0; /* This hides the images but doesn't actually remove the element  */
+  pointer-events: none; /* So this is added so the user can't click on the tidus/yuna htmls that still need to be created  */
+}
+
+.social img {
+  height: 16px;
+  width: 16px;
+}
+
 .hero {
   overflow: hidden; /*Makes it so the image on the right doesn't hang over*/
   height: 500px;
@@ -59,6 +73,10 @@ nav {
   height: 500px;
   transition: transform 0.3s ease-out;
   cursor: pointer;
+}
+
+.hero a {
+  display: flex; /*L/R came apart so this made them touch again */
 }
 
 .model-right {
@@ -272,4 +290,50 @@ nav {
   .details h2 {
     font-size: 28px;
   }
+}
+
+/*the below impacts the top nav */
+
+.nav-open {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50vh;
+  background: white;
+  z-index: 1;
+  color: black;
+  display: grid;
+  grid-template-columns: 5% 1fr 1fr 5%;
+  justify-items: center; /*here I goofed and used justify-content instead. . . that is for flex, not grid */
+  align-items: center;
+  text-align: center;
+  transform: translateY(
+    -100%
+  ); /*Takes the whole container and pushes it to the top */
+}
+
+.contact {
+  grid-column: 2/3;
+}
+
+nav-open h3 {
+  font-size: 28px;
+  padding-bottom: 40px;
+}
+
+nav-open p {
+  font-size: 18px;
+}
+
+.social-links img {
+  margin: 5px 15px; /*since the social logos are block elements where i specified the width, I could not use padding here */
+}
+
+.logo,
+.menu {
+  z-index: 2;
+}
+.menu {
+  cursor: pointer;
 }
